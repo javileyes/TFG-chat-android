@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/blueLighter"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <FrameLayout
+        android:background="@color/orange"
+        android:layout_marginTop="-1350dp"
+        android:layout_marginEnd="-400dp"
+        android:rotation="-225"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+    <FrameLayout
+        android:background="@color/blue"
+        android:layout_marginBottom="-600dp"
+        android:rotation="45"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+    <LinearLayout
+        android:layout_above="@+id/progressBar"
+        android:rotation="45"
+        android:layout_centerHorizontal="true"
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:text="Chat"
+            android:textColor="@color/blue"
+            android:textSize="46sp"
+            android:fontFamily="sans-serif-condensed"
+            android:textAlignment="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <net.steamcrafted.materialiconlib.MaterialIconView
+            android:layout_width="140dp"
+            android:layout_height="140dp"
+            app:materialIcon="comment_text"
+            app:materialIconColor="@color/blue"
+            app:materialIconSize="140dp"
+            android:scaleType="center"/>
+
+    </LinearLayout>
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_centerInParent="true"
+        android:layout_width="80dp"
+        android:layout_height="80dp"/>
+
+
+</RelativeLayout>

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:orientation="vertical"
+              android:focusable="true"
+              android:focusableInTouchMode="true"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+    <include layout="@layout/include_header"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ListView
+            android:id="@+id/listView"
+            android:stackFromBottom="true"
+            android:transcriptMode="normal"
+            android:layout_above="@+id/sendLinearLayout"
+            android:background="@color/white"
+            tools:listitem="@layout/item_message"
+            android:paddingTop="10dp"
+            android:paddingBottom="30dp"
+            android:divider="@color/transparent"
+            android:dividerHeight="1dp"
+            android:clipToPadding="false"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+
+        <RelativeLayout
+            android:id="@+id/sendLinearLayout"
+            android:layout_alignParentBottom="true"
+            android:background="@color/blueLight"
+            android:padding="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="42dp">
+
+            <EditText
+                android:id="@+id/sendEditText"
+                android:paddingStart="5dp"
+                android:layout_toStartOf="@+id/sendIconView"
+                android:hint="Escribe aqui..."
+                android:imeOptions="actionDone"
+                android:maxLines="1"
+                android:inputType="text"
+                android:ellipsize="end"
+                android:textSize="14sp"
+                android:textColorHint="@color/blueLight"
+                android:fontFamily="sans-serif-condensed"
+                android:textColor="@color/blue"
+                android:background="@color/white"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+
+            <net.steamcrafted.materialiconlib.MaterialIconView
+                android:id="@+id/sendIconView"
+                android:layout_alignParentEnd="true"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@color/white"
+                app:materialIcon="send"
+                app:materialIconColor="@color/blue"
+                app:materialIconSize="28dp"
+                android:scaleType="center"/>
+
+        </RelativeLayout>
+
+        <ProgressBar
+            android:visibility="gone"
+            android:id="@+id/progressBar"
+            android:indeterminateTint="@color/orange"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="40dp"/>
+
+    </RelativeLayout>
+
+
+</LinearLayout>

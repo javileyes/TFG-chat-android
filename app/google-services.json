@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "946395759621",
+    "firebase_url": "https://chat-a0416.firebaseio.com",
+    "project_id": "chat-a0416",
+    "storage_bucket": "chat-a0416.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:946395759621:android:43fbc5b6baa719aa",
+        "android_client_info": {
+          "package_name": "es.javiergimenez.chat"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "946395759621-3qq3vj3o4f3hokg1v8c22mkfa5jf8tc4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAS6i8I9STiyVbw0AsSbmE0T4u0P5aXqEw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "946395759621-3qq3vj3o4f3hokg1v8c22mkfa5jf8tc4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
