@@ -27,8 +27,10 @@ class LoginActivity: AppCompatActivity() {
         }
 
         registerButton.setOnClickListener {
-            startActivity(Intent(this@LoginActivity, RegisterActivity::class.java))
-            overridePendingTransition(0, 0)
+            val username = usernameEditText.text.toString()
+            val password = passwordEditText.text.toString()
+
+            LoginService.postSingUp(this, username, password)
         }
 
     }

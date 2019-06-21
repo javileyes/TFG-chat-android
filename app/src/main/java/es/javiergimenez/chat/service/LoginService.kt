@@ -5,7 +5,7 @@ import android.widget.Toast
 import es.javiergimenez.chat.Application
 import es.javiergimenez.chat.controller.LoginActivity
 import es.javiergimenez.chat.controller.MainActivity
-import es.javiergimenez.chat.controller.RegisterActivity
+
 import es.javiergimenez.chat.controller.SplashActivity
 import es.javiergimenez.chat.model.User
 import es.javiergimenez.chat.service.retrofit.ChatRetrofit
@@ -67,17 +67,17 @@ object LoginService {
         )
     }
 
-    fun postSingUp(registerActivity: RegisterActivity, username: String, password: String) {
+    fun postSingUp(loginActivity: LoginActivity, username: String, password: String) {
 
         if (username.isBlank() || username.length < 4 || password.isBlank() || password.length < 4) {
-            Toast.makeText(registerActivity, "Introduce un usuario y contraseña válidos", Toast.LENGTH_SHORT).show()
+            Toast.makeText(loginActivity, "Introduce un usuario y contraseña válidos", Toast.LENGTH_SHORT).show()
             return
         }
 
-        val dialog = ProgressBarTool.create(registerActivity)
+        val dialog = ProgressBarTool.create(loginActivity)
         dialog.show()
 
-        registerActivity.compositeDisposable.add(
+        loginActivity.compositeDisposable.add(
 
             ChatRetrofit.chatApi.postSingUp(username, password)
                 .subscribeOn(Schedulers.io())
@@ -86,10 +86,9 @@ object LoginService {
                     dialog.dismiss()
                     it.password = null
                     Application.session.autoLogin = it
-                    registerActivity.onBackPressed()
                 }, {
                     dialog.dismiss()
-                    Toast.makeText(registerActivity, "Usuario ya existe", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(loginActivity, "Usuario ya existe", Toast.LENGTH_SHORT).show()
                 })
         )
 
