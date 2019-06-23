@@ -14,12 +14,11 @@ import retrofit2.converter.gson.GsonConverterFactory
 object ChatRetrofit {
 
 //    private const val BASE_URL = "http://80.211.4.233"
-    private const val BASE_URL = "http://javiergimenez.es"
+    var BASE_URL = "http://dominioelqueseaquequieras.es"
     const val AUTHORIZATION = "Authorization"
     const val BEARER = "Bearer "
 
     var chatApi: ChatApi
-
 
     init {
         val builder = Retrofit.Builder().baseUrl(BASE_URL)
@@ -31,6 +30,25 @@ object ChatRetrofit {
 
         chatApi = retrofit.create<ChatApi>(
             ChatApi::class.java)
+    }
+
+    fun iniciar(): Boolean {
+        try {
+            val builder = Retrofit.Builder().baseUrl(BASE_URL)
+            builder.client(createHttpClient())
+            val retrofit = builder
+                .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
+                .addConverterFactory(GsonConverterFactory.create(createGson()))
+                .build()
+
+            chatApi = retrofit.create<ChatApi>(
+                ChatApi::class.java)
+            return true
+        } catch (e: Exception) {
+            println("servidor no operativo: $BASE_URL")
+        }
+
+        return false
     }
 
     private fun createGson(): Gson {

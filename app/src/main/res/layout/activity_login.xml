@@ -62,6 +62,39 @@
             android:layout_height="wrap_content"/>
 
         <LinearLayout
+                android:layout_marginTop="16dp"
+                android:background="@color/white"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="38dp">
+
+            <net.steamcrafted.materialiconlib.MaterialIconView
+                    android:layout_gravity="center_vertical"
+                    android:layout_width="28dp"
+                    android:layout_height="28dp"
+                    android:layout_marginStart="8dp"
+                    app:materialIcon="account"
+                    app:materialIconColor="@color/blue"
+                    app:materialIconSize="28dp"
+                    android:scaleType="center"/>
+            <EditText
+                    android:id="@+id/servernameEditText"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:hint="URL SERVIDOR"
+                    android:maxLines="1"
+                    android:inputType="text"
+                    android:ellipsize="end"
+                    android:textSize="20sp"
+                    android:textColorHint="@color/blueLight"
+                    android:fontFamily="sans-serif-condensed"
+                    android:textColor="@color/blue"
+                    android:background="@color/transparent"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"/>
+        </LinearLayout>
+
+        <LinearLayout
             android:layout_marginTop="16dp"
             android:background="@color/white"
             android:orientation="horizontal"
